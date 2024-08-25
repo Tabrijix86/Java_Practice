@@ -1,4 +1,4 @@
-package com.tabriji.objectOrientedProgramming;
+package com.tabriji.objectAndClass;
 
 import java.util.Arrays;
 import java.util.StringJoiner;

@@ -1,4 +1,4 @@
-package com.tabriji.objectOrientedProgramming;
+package com.tabriji.objectAndClass;
 
 public class CharStackDemo {
     public static void main(String[] args) {
