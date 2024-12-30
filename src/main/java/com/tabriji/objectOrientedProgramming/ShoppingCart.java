@@ -9,28 +9,28 @@ public class ShoppingCart {
         products.add(product);
     }
 
-//    public double getTotalPrice() {
-//        double totalPrice = 0;
-//        for (Product product : products) {
-//            totalPrice += product.getPrice();
-//        }
-//        return totalPrice;
-//    }
-
     public double getTotalPrice() {
         double totalPrice = 0;
-
         for (Product product : products) {
-            double price = product.getPrice() * (100 - product.getDiscount()) / 100;
-            price += product.getWeight() * Product.SHIPPING_RATE;
-
-            if (product.getDimension().getVolume() > 10) {
-                price += product.getDimension().getVolume() * Product.DIMENSION_CHARGE;
-            }
-            totalPrice += price;
+            totalPrice += product.getProductPrice();
         }
         return totalPrice;
     }
+
+//    public double getTotalPrice() {
+//        double totalPrice = 0;
+//
+//        for (Product product : products) {
+//            double price = product.getPrice() * (100 - product.getDiscount()) / 100;
+//            price += product.getWeight() * Product.SHIPPING_RATE;
+//
+//            if (product.getDimension().getVolume() > 10) {
+//                price += product.getDimension().getVolume() * Product.DIMENSION_CHARGE;
+//            }
+//            totalPrice += price;
+//        }
+//        return totalPrice;
+//    }
 
     @Override
     public String toString() {

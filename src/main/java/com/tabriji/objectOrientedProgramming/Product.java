@@ -4,6 +4,7 @@ package com.tabriji.objectOrientedProgramming;
 public class Product {
     public static final int SHIPPING_RATE = 5;
     public static final int DIMENSION_CHARGE = (int) 1.5;
+
     private final String name;
     private final int weight;
     private final Dimension dimension;
@@ -44,6 +45,16 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    public double getProductPrice() {
+        double price = this.price * (100 - this.discount) / 100;
+        price += weight * SHIPPING_RATE;
+
+        if (dimension.getVolume() > 10) {
+            price += dimension.getVolume() * DIMENSION_CHARGE;
+        }
+        return price;
     }
 
     @Override
